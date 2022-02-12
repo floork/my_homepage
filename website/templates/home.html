@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='css/style.css')}}">
+{% endblock %}
+
+{% block content %}
+
+<div id="title"><strong>floork</strong></div>
+
+<div class="content">
+    <p>
+        Diese Seite ist als Ort der Freude an Technologie gewidmet und dient einfach nur um meine Projekte zu verbreiten und mich besser kennen zu lernen!
+    </p>
+    <br>
+    <strong>Social Media:</strong>
+    <br>
+    <br>
+    <p>
+        <a  href="https://open.spotify.com/user/mrosflorian1?si=86Cp0rt-RZyTXOBLFL9qbA&utm_source=copy-link&nd=1">Spotify</a>
+    </p>
+    <p>
+        <a href="https://www.instagram.com/mro_florian/">Instagram</a>
+    </p>
+    <p>
+        <a href="https://discord.com/users/368711972113481730">Discord</a>  
+    </p>
+    <p>
+        <a href="https://github.com/floork">Github</a>
+    </p>
+</div>
+
+<div class="link_icon" >
+    <a href="https://instagram.com/test"><img src="{{ url_for('static',filename='images/icons/Instagram_Glyph_Gradient_RGB.png')}}" alt="Instagram"></a>
+    <a href="https://open.spotify.com/user/mrosflorian1?si=86Cp0rt-RZyTXOBLFL9qbA&utm_source=copy-link&nd=1"><img src="{{ url_for('static',filename='images/icons/Spotify_Icon_RGB_White.png')}}" alt="Spotify"></a>
+    <a href="https://github.com/floork"><img src="{{ url_for('static',filename='images/icons/GitHub-Mark-Light-120px-plus.png')}}" alt="Github"></a>
+    <a href="https://discord.com/users/368711972113481730"><img src="{{ url_for('static',filename='images/icons/icon_clyde_white_RGB.png')}}" alt="Discord"></a>
+</div>
+
+
+{% endblock %}

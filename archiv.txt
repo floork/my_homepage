@@ -1,0 +1,103 @@
+
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+    <div class="row">
+      <div class="col-md-6 mt-md-0 mt-3">
+
+        <!-- Content -->
+        <h5 class="text-uppercase">Footer Content</h5>
+        <p>Here you can use rows and columns to organize your footer content.</p>
+        
+      </div>
+      <!-- Grid column -->
+      
+      <hr class="clearfix w-100 d-md-none pb-3">
+      
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+        
+        <!-- Links -->
+        <h5 class="text-uppercase">Links</h5>
+        
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+        
+      </div>
+      <!-- Grid column -->
+      
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+        
+        <!-- Links -->
+        <h5 class="text-uppercase">Links</h5>
+        
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+        
+      </div>
+      <!-- Grid column -->
+      
+    </div>
+    <!-- Grid row -->
+    
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+  
+</footer>
+
+
+
+
+
+<div class=foot>
+        <div class="foot_log">
+          a href="/"><img src="{{ url_for('static',filename='images/logo.png')}}" id="foot_logo"></a>
+          {% if user.is_authenticated %}
+          <a id="home" href="/">Home <span class="sr-only">(current)</span></a>
+          <a id="news" href="/news">News</a>
+          <a id="projects" href="/projects">Projects</a>
+          <a id="about-me" href="/about-me">About Me</a>
+          <a id="logout" href="/logout">
+          <a id="home" href="/">Home <span class="sr-only">(current)</span></a>
+          <a id="projects" href="/projects">Projects</a>
+          <a id="about-me" href="/about-me">About Me</a>
+          <a id="login" href="/login">login</a>
+          {% endif %}
+        </div>
+        <hr>
+          
+          
+          
+          
+          
+    </div>

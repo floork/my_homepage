@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% block title %}News{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='css/style.css')}}">
+{% endblock %}
+
+{% block content %}
+
+<div id="title"><strong>News:</strong></div>
+<div class="content">  
+      <div class="article">
+            <p>
+                  <h1>Website</h1>
+                  <p>
+                        Ich habe diese Website erstellt und das war einiges an Aufwand, aber ich finde es hat sich gelohnt!
+                        <br>
+                        <h6>Fakten:</h6>
+                        Insgesammt wurden über 550 Zeilen an Code geschrieben, davon:
+                        <ul>
+                              <li>ca. 160 für die Scripte</li>
+                              <li>ca. 192 für die Grund HTML Datei</li>
+                              <li>ca. 200 für die eigene CSS</li>
+                        </ul>
+                  </p>
+            </p>
+      </div>
+      <br>
+      <div class="article2">
+            <h1>Facharbeit</h1>
+            <p>
+                  Die Facharbeit nimmt Form an und Schreitet immer weiter auf ihr Ende zu!
+                  Wir sind aber auch kurz vor dem Abgabedatum...
+            </p>
+      </div>
+      <br>
+      
+</div>
+{% endblock %}

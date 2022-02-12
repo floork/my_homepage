@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+
+
+body {
+  background-size: cover;
+  background-attachment: fixed;
+  background:linear-gradient(0deg, rgba(68, 68, 68, 0.56), rgba(68, 68, 68, 0.56)), url('https://wallpapercave.com/wp/wp6273133.jpg');
+}
+
+#logo_my{
+  padding: 0;
+  height: auto;
+  width: auto;
+  max-width: 60px;
+}
+
+.container{
+  color: whitesmoke;
+}
+
+.nice_background{
+  margin: 30px 10%;
+  padding: 20px;
+  background-color: #4041466c;
+  border-radius: 50px;
+}
+
+.main_stuff{
+  margin-bottom: 0px
+}
+
+.main_content{
+  color: whitesmoke;
+}
+
+#title {
+  margin: 40px 0 25px 0 ;
+  font-size: 29px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: whitesmoke;
+  text-decoration: none;
+  text-align: center;
+}
+
+.content {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  color: whitesmoke;
+  text-decoration: none;
+  text-align: center;
+  padding: 0 25%;
+}
+
+.content a {
+  color: #0f00df;
+  text-decoration: underline;
+}
+
+.article{
+  border-radius: 35px;
+  background-color: #95979ebd;
+}
+
+.article2{
+  border-radius: 35px;
+  background-color: #7fd5e4bd;
+}
+
+.article3{
+  border-radius: 35px;
+  background-color: #44643abd;
+}
+
+.article4{
+  border-radius: 35px;
+  background-color: #6451b9bd;
+}
+
+.link_icon{
+  text-align: center;
+}
+
+.link_icon a img{
+  width: 40px;
+}
+
+
+
+
+
+footer {
+  
+  background-color: rgb(189, 189, 189);
+  position: static fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.social_icon{
+  width: 15px;
+}

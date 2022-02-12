@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    crossorigin="anonymous"
+  />
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
+    <title>{% block title %}Home{% endblock %}</title>
+</head>
+<body d-flex flex-column min-vh-100> 
+  <!-- 
+    FIXME:
+      >man kann sich nicht ausloggen!!!
+
+    TODO: 
+      >Fixen was man sieht, wenn man sich einloggt (besonders home)
+  
+  -->
+      <nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark shadow-sm">
+        <div class="container"> 
+          <a href="/" class="navbar-brand">
+        <img src="{{ url_for('static',filename='images/logo.png')}}" id="logo_my">
+      </a>
+      <button 
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse" 
+      data-target="#navbarSupportedContent" 
+      aria-controls="navbarSupportedContent" 
+      aria-expanded="false" 
+      aria-label="Toggle navigation" >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+      <div id="navbarSupportedContent" class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          {% if user.is_authenticated %}
+          <li class="nav-item active"><a class="nav-item nav-link" id="home" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-item nav-link" id="news" href="/news">News</a></li>
+          <li class="nav-item"><a class="nav-item nav-link" id="projects" href="/projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-item nav-link" id="about-me" href="/about-me">About Me</a></li>
+          <li class="nav-item"><a class="nav-item nav-link" id="logout" href="/logout">logout</a></li>
+          {% else %}
+          <li class="nav-item active"><a class="nav-item nav-link" id="home" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-item nav-link" id="projects" href="/projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-item nav-link" id="about_me" href="/about-me">About Me</a></li>
+          <li class="nav-item"><a class="nav-item nav-link" id="login" href="/login">login</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  {% for category, message in messages %} 
+          {% if category ==  'error' %}
+          <div class="alert alert-danger alter-dismissable fade show" role="alert">
+              {{ message }}
+              <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          {% else %}
+            <div class="alert alert-success alter-dismissable fade show" role="alert">
+              {{ message }}
+              <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+
+
+<div class="main_stuff">
+  <div class="nice_background">
+    <div class="main_content container">
+      {% block content %}
+      
+      {% endblock %}
+    </div>
+  </div>  
+
+
+<br>
+
+
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-4 foot">
+
+  <div class="container-fluid text-center text-md-left">
+    <div class="row">
+
+      <!-- Content -->
+      <div class="col-md-6 mt-md-0 mt-3">
+        <h5 class="text-uppercase">Footer Content</h5>
+        <p>
+          Hallo das ist ein echt cooler Footer und da du das hier siehst bedeutet das, dass du am Ende der Seite bist. Melde dich ruhig auch mal an, dann findest du noch viel mehr auf dieser Seite, oder schau auch mal bei Social Media vorbei! In allen Fällen ich hoffe die Seite gefällt dir! 
+          <br>
+          Klick mich ja nicht an!: <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Mach es nicht! XD </a>
+        </p>
+      </div>
+    
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <!-- Links -->
+      <div class="col-md-3 mb-md-0 mb-3">
+        <h5 class="text-uppercase">Links</h5>
+        <ul class="list-unstyled">
+          {% if user.is_authenticated %}
+          <li><a id="home" href="/">Home </a></li>
+          <li><a id="news" href="/news">News</a></li>
+          <li><a id="projects" href="/projects">Projects</a></li>
+          <li><a id="about_me" href="/about-me">About Me</a></li>
+          {% else %}
+          <li></li><a id="home" href="/">Home</a></li>
+          <li><a id="projects" href="/projects">Projects</a></li>
+          <li><a id="about-me" href="/about-me">About Me</a></li>
+          <li><a id="login" href="/login">Login</a></li>
+          {% endif %}
+        </ul>
+      </div>
+      
+      <!-- Social Media -->
+      <div class="col-md-3 mb-md-0 mb-3">
+        <h5 class="text-uppercase">Links</h5>
+        <ul class="list-unstyled">
+          <li>
+            <i><img src="{{ url_for('static',filename='images/icons/Instagram_Glyph_Gradient_RGB.png') }}" alt="" class="social_icon"></i>
+            <a  href="https://instagram.com/test">Instagram</a>
+          </li>
+          <li>
+            <i><img src="{{ url_for('static',filename='images/icons/Spotify_Icon_RGB_White.png') }}" alt="" class="social_icon"></i>
+            <a  href="https://open.spotify.com/user/mrosflorian1?si=86Cp0rt-RZyTXOBLFL9qbA&utm_source=copy-link&nd=1">Spotify</a>
+          </li>
+          <li>
+            <i><img src="{{ url_for('static',filename='images/icons/GitHub-Mark-Light-120px-plus.png') }}" alt="" class="social_icon"></i>
+            <a href="https://github.com/floork">Github</a>
+          </li>
+          <li>
+            <i><img src="{{ url_for('static',filename='images/icons/icon_clyde_white_RGB.png') }}" alt="" class="social_icon"></i>
+            <a href="https://discord.com/users/368711972113481730">Discord</a>
+          </li>
+          <li>
+            <i><img src="{{ url_for('static',filename='images/icons/impressum.png') }}" alt="" class="social_icon"></i>
+            <a id="impressum" href="/impressum" >Impressum</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright + Credit -->
+  <div class="footer-copyright text-center py-3">© 2022 Copyright:
+    <a href="/">My Self</a>
+    <p>Credit to: <a id="credit" href="/credit">Everyone here!</a></p>
+  </div>
+</footer>
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  crossorigin="anonymous"
+></script>
+
+
+</body>
+</html>
