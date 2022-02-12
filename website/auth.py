@@ -8,8 +8,6 @@ from flask_login import login_user, login_required, logout_user, current_user
 auth = Blueprint('auth', __name__)
 
 
-auth = Blueprint('auth', __name__)
-
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -23,16 +21,19 @@ def login():
                 login_user(user, remember=True)
                 return redirect(url_for('views.home'))
             else:
-                flash('Inncorrect password, try again!', category='error')
+                flash('Incorrect password, try again.', category='error')
         else:
-            flash('Email does not  exist!', category='error')
+            flash('Email does not exist.', category='error')
 
-    
     return render_template("login.html", user=current_user)
 
+
 @auth.route('/logout')
+@login_required
 def logout():
-    return render_template("home.html")
+    logout_user()
+    return render_template("home.html", user=current_user)
+
 
 @auth.route('/sign-up', methods=['GET', 'POST'])
 def sign_up():

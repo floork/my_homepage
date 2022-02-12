@@ -5,38 +5,64 @@
       href="{{url_for('.static', filename='css/style.css')}}">
 {% endblock %}
 
+
 {% block content %}
-
-<div id="title"><strong>floork</strong></div>
-
-<div class="content">
-    <p>
-        Diese Seite ist als Ort der Freude an Technologie gewidmet und dient einfach nur um meine Projekte zu verbreiten und mich besser kennen zu lernen!
-    </p>
-    <br>
-    <strong>Social Media:</strong>
-    <br>
-    <br>
-    <p>
-        <a  href="https://open.spotify.com/user/mrosflorian1?si=86Cp0rt-RZyTXOBLFL9qbA&utm_source=copy-link&nd=1">Spotify</a>
-    </p>
-    <p>
-        <a href="https://www.instagram.com/mro_florian/">Instagram</a>
-    </p>
-    <p>
-        <a href="https://discord.com/users/368711972113481730">Discord</a>  
-    </p>
-    <p>
-        <a href="https://github.com/floork">Github</a>
-    </p>
+<div class="page_main">
+    <div class="ich">Ich bin ein Nerd
+        <br>
+        <br>
+        und Liebe es!
+    </div>
+    
+    <div class="me">
+        <div class="myitem">
+              <h2 class="head_item">Das bin ich:</h2>
+              <br>
+              <p>
+                  Mein Name ist Florian, zurzeit bin ich Schüler an einer Fachoberschule die ich bald beende. Nach meinem Abschluss werde ich eine Ausbildung als Fachinformatiker anfangen.
+                  <br>
+                  Ich habe viele Hobbys und Interessen, so betreibe ich in meine Freizeit Kampfsport, beschäftige mich aber viel mit IT liebe es mir aber auch mal Zeit zum Zocken zu nehmen.
+              </p>
+        </div>
+              <img class="myself" src="{{ url_for('static',filename='images/WhatsApp Image 2021-09-24 at 16.36.48.jpeg') }}" alt="">
+        
+    </div>
 </div>
 
-<div class="link_icon" >
-    <a href="https://instagram.com/test"><img src="{{ url_for('static',filename='images/icons/Instagram_Glyph_Gradient_RGB.png')}}" alt="Instagram"></a>
-    <a href="https://open.spotify.com/user/mrosflorian1?si=86Cp0rt-RZyTXOBLFL9qbA&utm_source=copy-link&nd=1"><img src="{{ url_for('static',filename='images/icons/Spotify_Icon_RGB_White.png')}}" alt="Spotify"></a>
-    <a href="https://github.com/floork"><img src="{{ url_for('static',filename='images/icons/GitHub-Mark-Light-120px-plus.png')}}" alt="Github"></a>
-    <a href="https://discord.com/users/368711972113481730"><img src="{{ url_for('static',filename='images/icons/icon_clyde_white_RGB.png')}}" alt="Discord"></a>
-</div>
+<div class="page_main">
+    <div class="ich"><strong>floork</strong></div>
 
+    <div class="content">
+        <p>
+           <strong> Diese Seite ist als Ort der Freude an Technologie gewidmet und dient einfach nur um meine Projekte zu verbreiten und mich besser kennen zu lernen!</strong>
+            <br>
+            <br>
+            <h5>Schau doch mal auf meine <a href="/about-me">About Me</a></h5>
+        </p>
+        <br>
+        <strong>Social Media:</strong>
+        <br>
+        <br>
+        <p>
+            <a  href="https://open.spotify.com/user/mrosflorian1?si=86Cp0rt-RZyTXOBLFL9qbA&utm_source=copy-link&nd=1">Spotify</a>
+        </p>
+        <p>
+            <a href="https://www.instagram.com/mro_florian/">Instagram</a>
+        </p>
+        <p>
+            <a href="https://discord.com/users/368711972113481730">Discord</a>  
+        </p>
+        <p>
+            <a href="https://github.com/floork">Github</a>
+        </p>
+    </div>
+
+    <div class="link_icon" >
+        <a href="https://instagram.com/test"><img src="{{ url_for('static',filename='images/icons/Instagram_Glyph_Gradient_RGB.png')}}" alt="Instagram"></a>
+        <a href="https://open.spotify.com/user/mrosflorian1?si=86Cp0rt-RZyTXOBLFL9qbA&utm_source=copy-link&nd=1"><img src="{{ url_for('static',filename='images/icons/Spotify_Icon_RGB_White.png')}}" alt="Spotify"></a>
+        <a href="https://github.com/floork"><img src="{{ url_for('static',filename='images/icons/GitHub-Mark-Light-120px-plus.png')}}" alt="Github"></a>
+        <a href="https://discord.com/users/368711972113481730"><img src="{{ url_for('static',filename='images/icons/icon_clyde_white_RGB.png')}}" alt="Discord"></a>
+    </div>
+</div>
 
 {% endblock %}
