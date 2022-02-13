@@ -17,23 +17,23 @@
   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
     <title>{% block title %}Home{% endblock %}</title>
 </head>
-<body d-flex flex-column min-vh-100> 
+<body d-flex flex-column min-vh-100>
       <nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark shadow-sm">
-        <div class="container"> 
+        <div class="container">
           <a href="/" class="navbar-brand">
         <img src="{{ url_for('static',filename='images/logo.png')}}" id="logo_my">
       </a>
-      <button 
+      <button
       class="navbar-toggler"
       type="button"
-      data-toggle="collapse" 
-      data-target="#navbarSupportedContent" 
-      aria-controls="navbarSupportedContent" 
-      aria-expanded="false" 
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
       aria-label="Toggle navigation" >
       <span class="navbar-toggler-icon"></span>
     </button>
-  
+
       <div id="navbarSupportedContent" class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
           {% if user.is_authenticated %}
@@ -50,10 +50,10 @@
       </div>
     </div>
   </nav>
-  
+
   {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
-  {% for category, message in messages %} 
+  {% for category, message in messages %}
           {% if category ==  'error' %}
           <div class="alert alert-danger alter-dismissable fade show" role="alert">
               {{ message }}
@@ -75,34 +75,33 @@
 
 
 
-<div class="main_stuff">
+<main class="main_stuff">
   <div class="nice_background">
-    <div class="main_content container">
+    <div class="main_content container ">
       {% block content %}
-      
+
       {% endblock %}
     </div>
-  </div>  
-  
+  </div>
 <br>
-
+</main>
 
 <!-- Footer -->
-<footer class="page-footer font-small blue pt-4">
+<footer class="page-footer font-small blue pt-4 footer navbar-fixed-bottom">
 <div class="foot">
-  <div class="container-fluid text-center text-md-left">
+  <div class="container text-center text-md-left">
     <div class="row">
 
       <!-- Content -->
       <div class="col-md-6 mt-md-0 mt-3">
         <h5 class="text-uppercase">Nice</h5>
         <p>
-          Hallo das ist ein echt cooler Footer und da du das hier siehst bedeutet das, dass du am Ende der Seite bist. Melde dich ruhig auch mal an, dann findest du noch viel mehr auf dieser Seite, oder schau auch mal bei Social Media vorbei! In allen Fällen ich hoffe die Seite gefällt dir! 
+          Hallo das ist ein echt cooler Footer und da du das hier siehst bedeutet das, dass du am Ende der Seite bist. Melde dich ruhig auch mal an, dann findest du noch viel mehr auf dieser Seite, oder schau auch mal bei Social Media vorbei! In allen Fällen ich hoffe die Seite gefällt dir!
           <br>
           Klick mich ja nicht an!: <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Mach es nicht! XD </a>
         </p>
       </div>
-    
+
       <hr class="clearfix w-100 d-md-none pb-3">
 
       <!-- Links -->
@@ -120,7 +119,7 @@
           {% endif %}
         </ul>
       </div>
-      
+
       <!-- Social Media -->
       <div class="col-md-3 mb-md-0 mb-3">
         <h5 class="text-uppercase">Links</h5>
@@ -157,7 +156,6 @@
   </div>
   </div>
 </footer>
-</div>
 
 <script
   src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
